@@ -17,8 +17,9 @@ class TitleManager {
   }
 
   // property : stateData
-  // * 오타인가?
-  get stateDataObject(){
+  // * 오타인가? // * 아니다. 상관없는 것 같다.
+  
+  get stateData(){
     return this._stateDataObject;
   }
   set stateDataObject(value){
@@ -47,3 +48,6 @@ class TitleManager {
 
 // ? 매개변수 안에 기본값을 세팅하는 것은 class만 가능할까?
 const test = new TitleManager('h1', {basicTitle:"기본 제목",newTitle: "새로운 제목" });
+
+console.dir(test);
+console.log(test.tagName);
