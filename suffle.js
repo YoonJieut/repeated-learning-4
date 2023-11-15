@@ -25,3 +25,14 @@ function suffleArray(array){
 
   return array; // 섞인 배열 반환
 }
+
+const shuffledArray = suffleArray(studentList);
+
+function createTeams(array){
+  // 배열을 먼저 섞음(위에 함수 선언에서)
+  const shuffled = shuffledArray(array);
+  const teamSize = 4; // 예제 편의상 리터럴로 설정, 팀의 기본 크기
+
+  // ! reduce 메서드를 사용하여 팀 생성
+  //
+}
