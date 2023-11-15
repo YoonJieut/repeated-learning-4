@@ -27,4 +27,23 @@ class TitleManager {
       this._stateDataObject
     }
   }
+
+  // method : updateUI
+  updateUI(){
+    const elements = document.getElementsByTagName(this._tagName);
+    if(elements.length > 0) {
+      elements[0].textContent = this._stateDataObject.basicTitle;
+    } else {
+      throw new Error('지정된 태그 이름의 요소를 찾을 수 없습니다.')
+    }
+  }
+
+  //method : updateTitle
+  updateTitle(){
+    this._stateDataObject.basicTitle = this._stateDataObject.newTitle;
+    this.updateUI();
+  }
 }
+
+// ? 매개변수 안에 기본값을 세팅하는 것은 class만 가능할까?
+const test = new TitleManager('h1', {basicTitle:"기본 제목",newTitle: "새로운 제목" });
