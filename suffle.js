@@ -38,6 +38,14 @@ function createTeams(array){
 
   const teams = shuffled.reduce((acc, current, index)=>{
     //새 팀을 시작하거나 현재 팀에 학생을 추가
-    if(index % teamSize === 0 && shuffled.length - index >= team)
-  })
+    if(index % teamSize === 0 && shuffled.length - index >= team) acc.push([]);
+    // * index 0 일때도 작동하는 것 잊지말기, 뒤의 조건식은 마지막 배열을 막아줘 나머지를 맨 마지막 배열요소에 넣어주는 로직이다.
+    acc[acc.length-1].push(current);
+    //* 현재 학생을 추가한다.
+    return acc
+    // * 팀 배열이 누산기에 리턴
+
+    // 상수 teams는 마치 물이 적정설에 닿으면 덜어내는 것 처럼 동작
+
+  }, []) // * 초기를 배열로 시작하는 초기세팅값 2번째 매개변수
 }
