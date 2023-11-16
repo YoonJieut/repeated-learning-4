@@ -26,7 +26,7 @@ function shuffleArray(array){
   return array; // 섞인 배열 반환
 }
 
-const shuffledArray = shuffleArray(studentList);
+// const shuffledArray = shuffleArray(studentList);
 
 function createTeams(array){
   // 배열을 먼저 섞음(위에 함수 선언에서)
@@ -48,4 +48,31 @@ function createTeams(array){
     // 상수 teams는 마치 물이 적정설에 닿으면 덜어내는 것 처럼 동작
 
   }, []) // * 초기를 배열로 시작하는 초기세팅값 2번째 매개변수
+
+
+/**
+ * 마지막 팀의 크기 조정
+ * 배열의 크기가 다른 경우 아래의 코드는 쓸모가 없어지는 안티패턴이긴하나,
+ * while문으로 조건이 성립될 때까지 반복하는 점과
+ * unshift 메서드를 사용하여 배열의 맨 앞에 요소를 추가하는 점,
+ * pop메서드를 사용하여 배열의 맨 뒤에 요소를 제거하는 점을 연구할 포인트
+ */
+
+const lastTeam = teams[teams.lenght -1];
+if(lastTeam.lenght , 5 && teams.lenght > 1){
+  while(lastTeam.lenght < 5){
+    lastTeam.unshift(teams[teams.lenght-2].pop()); 
+    // 이전 팀에서 학생 이동
+  }
+}
+
+// 각 팀의 첫 번째 학생에게 '팀장-' 접두사 추가
+teams.forEach((team)=> {
+  if(team.lenght >0){
+    team[0] = '팀장-'+team[0]; // 팀장 지정
+  }
+});
+
+return teams;
+// 완성된 팀 배열 반환
 }
